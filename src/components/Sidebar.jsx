@@ -6,6 +6,9 @@ import Button from "./Button";
 import ChannelComp from "./ChannelComp";
 import Background from '../assets/img/Background.jpg';
 import VideoContent from "./VideoContent";
+import StreamChat from "./StreamChat";
+
+
 export default function Sidebar(props) {
     if(props.routing == "SM"){
         return(
@@ -124,7 +127,7 @@ export default function Sidebar(props) {
         return(
             <>
                 <div className="main__position">
-                    <div className="sidebar bg__color-2">
+                    <div className="sidebar bg__color-2 rr__flex-row">
                         <div className="cn__holder rr__flex-col">
                             <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                                 FOLLOWED CHANNELS
@@ -156,11 +159,11 @@ export default function Sidebar(props) {
                             </div>
                         </div>
                         <div className="main__content bg__color-00">
-
+                            <img className="bg__img" src={smBackground} alt="background"/>
 
 
                         </div>
-                        
+                        <StreamChat />
                     </div>
                 </div>
             </>

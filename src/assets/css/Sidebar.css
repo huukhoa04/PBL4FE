@@ -36,19 +36,11 @@
 .sidebar{
     /* position: fixed; */
     left: 0;
-    min-width: var(--sidebar-width);
     height: 100%;
     background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    padding-top: 5em;
-    row-gap: 1.4em;
-    border-right: 0.16em var(--border-color) solid;
     z-index: 9999;
-    flex: 1;
-    overflow-y: scroll;
-
     
+
 }
 
 .sb__label{
@@ -64,6 +56,15 @@
 }
 
 /* INDEX */
+.cn__holder{
+    row-gap: 1em;
+    overflow-y: scroll;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    min-width: var(--sidebar-width);
+    border-right: 0.16em var(--border-color) solid;
+
+}
 .cn__holder-comps{
     display: flex;
     flex-direction: column;

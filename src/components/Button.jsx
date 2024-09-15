@@ -20,7 +20,7 @@ export default function Button({type, text, onClick}) {
     else if(type == "link-type")
     {
         return(
-            <button className="btn__main no__bg league-spartan-bold citizenship fs__normal-2" onClick={onClick}>
+            <button className="btn__main no__bg league-spartan-bold citizenship fs__normal-1" onClick={onClick}>
                 {text}
             </button>
         );
