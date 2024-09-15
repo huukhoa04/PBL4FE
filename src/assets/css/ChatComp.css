@@ -1,0 +1,6 @@
+@import url(./root.css);
+.chat__comp{
+    width: 100%;
+    text-wrap: wrap;
+    
+}

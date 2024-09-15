@@ -1,0 +1,13 @@
+@import url(./root.css);
+
+.tag__card{
+    background-color: var(--bg-color);
+    color: #AAAAAA;
+    border-radius: 0.6em;
+    width: fit-content;
+    padding: 0.3em 1em;
+    text-align: center;
+}
+.tag__card:hover {
+    background-color: #555555;
+}

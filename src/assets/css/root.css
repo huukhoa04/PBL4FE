@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+:root{
+    /* color */
+    --primary-color: #252525;
+    --secondary-color: #47FFD3;
+    --lighter-primary-color: #3E4547;
+    --bg-color: #2E3435;
+    --border-color: #434C4E;
+    /* size */
+    --icon-box-size: 1.875em;
+    --radius-scale: 0.3125em;
+    --btn-radius-scale: 0.1875em;
+    --sidebar-width: 16em;
+    --regular-font-size: 1em;
+    --font-2x: 1.2em;
+
+
+}
+/* font */
+.league-spartan-bold {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.league-spartan-semibold {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+.league-spartan-regular {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.league-spartan-light {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+/* webkit */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* font-size */
+
+.fs__normal-1{
+    font-size: 1em;
+}
+.fs__normal-2{
+    font-size: 1.2em;
+}
+.fs__normal-3{
+    font-size: 1.4em;
+}
+
+.fs__small-1{
+    font-size: 0.6em;
+}
+.fs__small-2{
+    font-size: 0.7em;
+}
+.fs__small-3{
+    font-size: 0.8em;
+}
+
+.fs__large-1{
+    font-size: 1.6em;
+}
+.fs__large-2{
+    font-size: 1.8em;
+}
+.fs__large-3{
+    font-size: 2em;
+}
+.tbox-1{
+    border: #252525 solid;
+    background-color: transparent;
+}
+
+
+/* sidebar */
+.bg__color-1{
+    background-color: var(--primary-color);
+}
+.bg__color-2{
+    background-color: var(--bg-color);
+}
+.bg__color-00{
+    background-color: #000;
+}
+.fill__container{
+    width: 100%;
+}
+.fit__content{
+    width: fit-content;
+}
+.obj-cover{
+    object-fit: cover;
+}
+.citizenship{
+    color: white;
+}
+.no__bg{
+    background: transparent;
+}
+
+
+
+/* flex */
+.rr__flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.rr__flex-col{
+    display: flex;
+    flex-direction: column;
+}
+.mx-auto{
+    align-self: center;
+}
+
+
