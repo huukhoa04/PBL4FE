@@ -1,27 +1,47 @@
 @import url(./root.css);
 
 .stream__chat{
-    width: 26.25em;
-    top: 0;
-    left: 0;
+    width: 26.3em;
+    /* top: 0; */
+    /* right: 0; */
+    /* margin-right: 0.6em; */
     display: flex;
     flex-direction: column;
-    flex: 1.75;
-    padding-top: 5em;
+    flex: 2.1;
+    padding-top: 4.15em;
+    border-left: var(--border-line-cof);
+
 }
 
 .sc__header{
-    width: 100%;
+    align-self: center;
     height: auto;
+    width: 100%;
+    border-bottom: var(--border-line-cof);
+    flex: 0.3;
+    display: flex;
+    align-items: center;
 }
+.sc__header-holder{
+    padding: 0.3em 0.5em;
+    width: 100%;
+    justify-content: space-between;
+    align-self: center;
+}
+
 
 .sc__body{
     height: 100%;
     width: 100%;
+    overflow-y: scroll;
+    /* padding: 0 0.5em; */
+    flex: 7;
+}
+.sc__body-holder{
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    overflow-y: scroll;
+    padding: 0 0.5em;
 
 }
 
@@ -30,10 +50,34 @@
     position: sticky;
     bottom: 0;
     left: 0;
+    row-gap: 0.3em;
+    border-top: var(--border-line-cof);
+    padding-top: 0.5em;
+    flex: 1;
 }
 
-.chat__box{
+.cb__holder{
+    width: 97%;
+    align-items: center;
+    padding: 0 0.6em;
+    align-self: center;
+    height: 3em !important;
+}
+
+.chat__box-c{
     background-color: transparent;
+    border-right: none;
+    /* border-color: #fff; */
+    border-top-color: #fff;
     color: white;
-    
+    align-self: center;
+    border-radius: var(--radius-scale) 0 0 var(--radius-scale);
+    padding: 0.3em;
+    /* width: 100%; */
+    /* width: 15em !important; */
+}
+.sc__btn-holder{
+    align-items: end;
+    width: 100%;
+    padding: 0 0.5em;
 }

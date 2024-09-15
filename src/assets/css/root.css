@@ -13,6 +13,7 @@
     --sidebar-width: 16em;
     --regular-font-size: 1em;
     --font-2x: 1.2em;
+    --border-line-cof: 0.16em var(--border-color) solid;
 
 
 }
@@ -84,6 +85,9 @@
 
 
 /* sidebar */
+.bg__color-vid{
+    background-color: #25292B;
+}
 .bg__color-1{
     background-color: var(--primary-color);
 }
@@ -125,3 +129,22 @@
 }
 
 
+.rr__icon-btn{
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.3em;
+    border-radius: var(--radius-scale);
+}
+.rr__icon-btn:hover {
+    background-color: var(--lighter-primary-color);
+    cursor: pointer;
+}
+.emoji-btn{
+    border-radius: 0 var(--radius-scale) var(--radius-scale) 0 !important;
+    border: 0.13em solid #FFF;
+    height: 1.55em;
+    border-left: none;
+}
