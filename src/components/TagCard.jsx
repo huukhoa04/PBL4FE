@@ -1,10 +1,10 @@
 import '../assets/css/TagCard.css'
 
 
-export default function TagCard(props) {
+export default function TagCard({name}) {
     return(
       <div className="tag__card league-spartan-semibold fs__small-1">
-        {props.name}
+        {name}
       </div>
     );
 }

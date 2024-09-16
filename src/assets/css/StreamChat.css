@@ -1,7 +1,7 @@
-@import url(./root.css);
+/* @import url(./root.css); */
 
 .stream__chat{
-    width: 26.3em;
+    width: 26.4em;
     /* top: 0; */
     /* right: 0; */
     /* margin-right: 0.6em; */
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    padding: 0 0.5em;
+    padding: 0 0.6em;
 
 }
 

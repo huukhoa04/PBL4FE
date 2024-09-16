@@ -148,3 +148,11 @@
     height: 1.55em;
     border-left: none;
 }
+
+/* img  */
+.avatar__2x{
+    border-radius: 1.5em;
+    border: 2px solid var(--secondary-color);
+    width: 6.25em;
+    height: 6.25em;
+}
