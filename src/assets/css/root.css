@@ -17,6 +17,15 @@
 
 
 }
+.hide__scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide__scroll-bar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 /* font */
 .league-spartan-bold {
     font-family: "League Spartan", sans-serif;

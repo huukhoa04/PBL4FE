@@ -53,7 +53,7 @@ export default function Sidebar(props) {
         return(
         <div className="main__position">
                 <div className="sidebar bg__color-2 rr__flex-row">
-                <div className="cn__holder rr__flex-col">
+                <div className="cn__holder rr__flex-col hide__scroll-bar">
                             <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                                 FOLLOWED CHANNELS
                             </div>
@@ -160,9 +160,9 @@ export default function Sidebar(props) {
                         <div className="main__content bg__color-vid">
                             {/* <img className="bg__img" src={smBackground} alt="background"/> */}
                             <div className="video__holder">
-                                <img className="vd__main fill__container" src="https://i.imgur.com/rbuyoEE.jpg" alt="" srcset="" />
+                                <img className="vd__main fill__container" src="https://i.imgur.com/rbuyoEE.jpg"/>
                             </div>
-                            <StreamUserInfo userName="Resolved" title="Hello guys" category="osu!" profilePic="https://i.imgur.com/neHVP5j.jpg" viewCount={1234} />
+                            <StreamUserInfo userName="Resolved" title="Hello guys" category="osu!" profilePic="https://i.imgur.com/neHVP5j.jpg" viewCount={123492} flCount={12342} />
 
                         </div>
                         <StreamChat />

@@ -1,7 +1,10 @@
 import '../assets/css/ChannelComp.css'
 export default function ChannelComp(props) {
     function shortenNumber(number) {
-        if (number >= 1000000) {
+        if(number >= 1000000000){
+            return (number / 1000000000).toFixed(1) + "B";
+        }
+        else if (number >= 1000000) {
           // If the number is greater than or equal to 1 million, shorten it to millions.
           return (number / 1000000).toFixed(1) + "M";
         } else if (number >= 1000) {
@@ -11,7 +14,7 @@ export default function ChannelComp(props) {
           // Otherwise, return the original number.
           return number;
         }
-      }
+    }
     const status = props.isOffline;
     if(!status)
         return(

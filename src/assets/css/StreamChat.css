@@ -36,6 +36,7 @@
     overflow-y: scroll;
     /* padding: 0 0.5em; */
     flex: 7;
+    scrollbar-width: none;
 }
 .sc__body-holder{
     display: flex;
