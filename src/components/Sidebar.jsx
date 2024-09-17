@@ -7,6 +7,7 @@ import ChannelComp from "./ChannelComp";
 import Background from '../assets/img/Background.jpg';
 import VideoContent from "./VideoContent";
 import StreamChat from "./StreamChat";
+import StreamUserInfo from "./StreamUserInfo";
 
 
 export default function Sidebar(props) {
@@ -161,7 +162,7 @@ export default function Sidebar(props) {
                             <div className="video__holder">
                                 <img className="vd__main fill__container" src="https://i.imgur.com/rbuyoEE.jpg" alt="" srcset="" />
                             </div>
-
+                            <StreamUserInfo userName="Resolved" title="Hello guys" category="osu!" profilePic="https://i.imgur.com/neHVP5j.jpg" viewCount={1234} />
 
                         </div>
                         <StreamChat />

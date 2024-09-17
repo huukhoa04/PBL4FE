@@ -11,9 +11,9 @@ export default function StreamUserInfo(props) {
                 {/* content here */}
                 <div className="user__info-holder rr_flex-row fill__container">
                     <div className="uih__left-holder rr__flex-row">
-                        <div className="avatar__2x">    
-                            <img src={props.profilePic} className="fill__container"/>
-                        </div>
+                          
+                            <img src={props.profilePic} className="avatar__2x"/>
+                        
                         <div className="uih__context-holder rr__flex-col">
                             <div className="uihc__h-username league-spartan-semibold fs__normal-2 citizenship">
                                 {props.userName}
@@ -25,7 +25,7 @@ export default function StreamUserInfo(props) {
                                 <div className="uihc__h-category league-spartan-light fs__normal-2">
                                     {props.category}
                                 </div>
-                                <div className="uihc__h-tag__holder">
+                                <div className="uihc__h-tag__holder rr__flex-row">
                                     {/* map tag here */}
                                     <TagCard name="English"/>
                                     <TagCard name="Vietnamese"/>
@@ -35,13 +35,13 @@ export default function StreamUserInfo(props) {
                         </div>
                     </div>
                     <div className="uih__right-holder rr__flex-col">
-                        <div className="uihr__btn-holder">
+                        <div className="uihr__btn-holder rr__flex-row">
                             <BtnIcon icons={faHeart}/>
                             <BtnIcon icons={faShareFromSquare}/>
                         </div>
-                        <div className="uihr__view-holder">
-                            <span className="uihr__view-count">
-                                <FontAwesomeIcon icon={faEye} /> &emsp; {props.viewCount}
+                        <div className="uihr__view-holder rr__flex-row">
+                            <span className="uihr__view-count citizenship league-spartan-regular">
+                                <FontAwesomeIcon icon={faEye} /> {props.viewCount}
                             </span>
                             <BtnIcon icons={faEllipsis}/>
                         </div>
