@@ -25,4 +25,18 @@ export default function Button({type, text, onClick}) {
             </button>
         );
     }
+    else if(type == "nav-type"){
+        return(
+            <button className="btn__main no__bg league-spartan-light citizenship fs__normal-3 no__padding-lr" onClick={onClick}>
+                {text}
+            </button>
+        );
+    }
+    else if(type == "nav-type-clicked"){
+        return(
+            <button className="btn__main bm__clicked no__bg league-spartan-light fs__normal-3 no__padding-lr" onClick={onClick}>
+                {text}
+            </button>
+        );
+    }
 }

@@ -57,7 +57,21 @@
 }
 
 /* font-size */
-
+.fs__title-1{
+    font-size: 2.2em;
+}
+.fs__title-2{
+    font-size: 2.3em;
+}
+.fs__title-3{
+    font-size: 2.4em;
+}
+.fs__title-4{
+    font-size: 2.5em;
+}
+.fs__title-5{
+    font-size: 3em;
+}
 .fs__normal-1{
     font-size: 1em;
 }
@@ -121,7 +135,14 @@
 .no__bg{
     background: transparent;
 }
-
+.no__padding-lr{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.no__padding-tb{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
 
 
 /* flex */
@@ -164,4 +185,14 @@
     border: 2px solid var(--secondary-color);
     width: 6.25em;
     height: 6.25em;
+}
+
+.border__r{
+    border-right: 0.16em var(--border-color) solid;
+    height: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+.no__user-select{
+    user-select: none;
 }

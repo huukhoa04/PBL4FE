@@ -28,7 +28,7 @@ export default function StreamUserInfo(props) {
         <div className="sui__layout fill__container">
             <div className="sui__holder rr__flex-col">
                 {/* content here */}
-                <div className="user__info-holder rr__flex-row fill__container">
+                <div className="suiu__info-holder rr__flex-row fill__container">
                     <div className="uih__left-holder rr__flex-row">
                           
                             <img src={props.profilePic} className="avatar__2x"/>

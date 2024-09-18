@@ -3,7 +3,7 @@ import { faArrowRightFromBracket, faGear, faUserGear, faWaveSquare } from "@fort
 import '../assets/css/MenuOptionBtn.css'
 export default function MenuOptionBtn(props) {
     return(
-        <div className="option__btn">
+        <div className="option__btn" onClick={props.onClick}>
             <div className="option__icon">
                 <FontAwesomeIcon icon={props.icon}/>
             </div>

@@ -18,3 +18,8 @@
     color: var(--secondary-color);
     cursor: pointer;
 }
+.bm__clicked{
+    border-bottom: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 0px;
+}
