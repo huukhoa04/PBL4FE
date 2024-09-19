@@ -103,9 +103,15 @@
 }
 
 /* video */
-.vd__main{
+.vd__holder{
     /* max-height: 44em; */
-    display: inherit;
+    width: 40em;
+    height: 20em;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-scale);
+
 }
 
 

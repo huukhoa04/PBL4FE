@@ -10,11 +10,14 @@ import StreamChat from "./StreamChat";
 import StreamUserInfo from "./StreamUserInfo";
 import { useState } from "react";
 import CategoryComp from "./CategoryComp";
+import CustomModal from "./CustomModal";
+import StatBox from "./StatBox";
 
 
 export default function Sidebar(props) {
     const [option, setOption] = useState(0);
     if(props.routing == "SM"){
+        const [isOffline, setOffline] = useState(true);
         return(
             <div className="main__position">
                 <div className="sidebar">
@@ -42,10 +45,21 @@ export default function Sidebar(props) {
                             {/* Setting up stream */}
                             <div className="fl__content-holder rr__flex-col">
                                 <span className="league-spartan-semibold fs__title-4 citizenship">Set up your stream source</span>
+                                <br/>
+                                <br/>
                                 <div className="sh__content-holder rr__flex-row">
-                                    <div className="vd__holder">
-                                        {/* output of the stream here */}
+                                    <div className="rr__flex-col rrf__row-normal">
+                                        <div className="vd__holder bg__color-2 rr__flex-col">
+                                            {/* output of the stream here */}
+                                            <span className="fs__title-3 league-spartan-semibold citizenship">Offline</span>
+                                        </div>
+                                        <CustomModal type={"SMdesc__setting"} />
                                     </div>
+                                    <div className="rr__flex-col">
+                                        <CustomModal type={"SM"} />
+                                        
+                                    </div>
+                                    
                                     
                                 </div>
                             </div>
@@ -53,7 +67,23 @@ export default function Sidebar(props) {
                         :
                         <>
                             {/* Analysis */}
-
+                            <div className="fl__content-holder rr__flex-col def-pad-1">
+                                <div className="rr__flex-col def-pad-1">
+                                    <span className="league-spartan-semibold fs__title-5 citizenship fill__container ta__center">
+                                        Analytics
+                                    </span>
+                                    <span className="league-spartan-light fs__normal-3 citizenship fill__container ta__center">
+                                        Check your stream analytics here
+                                    </span>
+                                </div>
+                                <div class="rr__flex-row rrf__col-normal fill__container">
+                                    <StatBox value={"123"} label={"Viewers"}/>
+                                    <StatBox value={"123"} label={"Viewers"}/>
+                                    <StatBox value={"123"} label={"Viewers"}/>
+                                    <StatBox value={"123"} label={"Viewers"}/>
+                                    <StatBox value={"123"} label={"Viewers"}/>
+                                </div>
+                            </div>
                         </>
                         
                     }

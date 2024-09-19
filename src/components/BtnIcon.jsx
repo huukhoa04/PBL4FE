@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightFromBracket, faEye, faIcons } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowUp, faClose, faArrowRightFromBracket, faEye, faIcons } from "@fortawesome/free-solid-svg-icons";
 import '../assets/css/IconOnlyBtn.css'
 export default function BtnIcon(props) {
     if(props.icons == faIcons){

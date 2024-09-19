@@ -51,6 +51,15 @@
     font-weight: 200;
     font-style: normal;
 }
+.ta__center{
+    text-align: center;
+}
+.ta__left{
+    text-align: left;
+}
+.ta__right{
+    text-align: right;
+}
 /* webkit */
 ::-webkit-scrollbar {
     display: none;
@@ -135,6 +144,18 @@
 .no__bg{
     background: transparent;
 }
+.def-pad-1{
+    padding: 1em;
+}
+.def-pad-2{
+    padding: 0.5em;
+}
+.def-pad-3{
+    padding: 0.25em;
+}
+.def-pad-4{
+    padding: 0.125em;
+}
 .no__padding-lr{
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -154,6 +175,40 @@
     display: flex;
     flex-direction: column;
 }
+.rr__flex-row-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.rr__flex-col-reverse{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.rrf__col-normal{
+    column-gap: 1em;
+}
+.rrf__col-small{
+    column-gap: 0.5em;
+}
+.rrf__row-normal{
+    row-gap: 1em;
+}
+.rrf__row-small{
+    row-gap: 0.5em;
+}
+.rrf__jc-center{
+    justify-content: center;
+}
+.rrf__jc-space-around{
+    justify-content: space-around;
+}
+.rrf__jc-space-between{
+    justify-content: space-between;
+}
+.rrf__ai-center{
+    align-items: center;
+}
+
+
 .mx-auto{
     align-self: center;
 }
