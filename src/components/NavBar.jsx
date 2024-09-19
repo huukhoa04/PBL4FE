@@ -9,6 +9,25 @@ import { useNavigate } from 'react-router-dom';
 export default function NavBar(props) {
     const route = props.routing;
     const navigate = useNavigate();
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    if(route == "AS"){
+        return(
+            <>
+        <div className="nav__bar">
+            <div className="left__ch">
+                <img className="n__logo" src={logo} alt="Logo" onClick={() => navigate('/')}/> &emsp;
+                <div className="lch__title league-spartan-semibold">Account Setting</div>
+            </div>
+            <div className="middle__ch">
+
+            </div>
+            <div className="right__ch">
+                <ProfileMenu userName="Resolved" imgLink="https://i.imgur.com/neHVP5j.jpg" />
+            </div>
+        </div>
+        </>
+        )
+    }
     if(route == "SM")
     return(
         <>

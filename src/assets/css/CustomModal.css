@@ -4,6 +4,11 @@
     padding: 1em;
     border-radius: var(--radius-scale);
 }
+.modal__layout-2{
+    width: 42em;
+    padding: 1em;
+    border-radius: var(--radius-scale);
+}
 .modal__content-holder{
     
 }
@@ -15,8 +20,18 @@
 .smd__label{
     width: 6.25em;
 }
+.smd__label-2{
+    width: 10em;
+}
+.smd__label-3{
+    width: 12em;
+}
 .smd__input{
     border-radius: var(--radius-scale);
+}
+.smd__textarea{
+    border-radius: var(--radius-scale);
+    height: 10em;
 }
 
 /* drop down  */

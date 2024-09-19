@@ -144,6 +144,9 @@
 .no__bg{
     background: transparent;
 }
+.def-pad-2em{
+    padding: 2em;
+}
 .def-pad-1{
     padding: 1em;
 }
@@ -250,4 +253,8 @@
 }
 .no__user-select{
     user-select: none;
+}
+
+.ta__no-resize{
+    resize: none !important;
 }

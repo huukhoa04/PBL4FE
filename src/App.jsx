@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import StreamManager from './pages/streamManager'
 import UserNamePage from './pages/UserNamePage'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AccountSetting from "./pages/AccountSetting";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="userName" element={<UserNamePage />}/>
       <Route path="following" element={<Following />}/>
       <Route path="browsing" element={<Browsing />}/>
+      <Route path="accountSetting" element={<AccountSetting />}/>
     </Routes>
     </BrowserRouter>
   )
