@@ -22,6 +22,35 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 export default function CustomModal(props) {
   if (props.type == "login") {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+      let newErrors = {};
+
+      if (!username.trim()) {
+        newErrors.username = "Username is required";
+      } else if (username.length < 3) {
+        newErrors.username = "Username must be at least 3 characters";
+      }
+
+      if (!password) {
+        newErrors.password = "Password is required";
+      } else if (password.length < 6) {
+        newErrors.password = "Password must be at least 6 characters";
+      }
+
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+
+    const handleLogin = () => {
+      if (validateForm()) {
+        props.login(username, password);
+      }
+    };
+
     return (
       <>
         <div className="modal__holder">
@@ -38,12 +67,26 @@ export default function CustomModal(props) {
                   className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
                   type="text"
                   placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
+                {errors.username && (
+                  <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                    {errors.username}
+                  </span>
+                )}
                 <input
                   className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
                   type="password"
                   placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
+                {errors.password && (
+                  <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                    {errors.password}
+                  </span>
+                )}
               </div>
               <div className="rr__flex-col rrf__row-small">
                 <span className="fs__normal-1 league-spartan-light citizenship ta__center">
@@ -68,13 +111,7 @@ export default function CustomModal(props) {
                 </span>
               </div>
               <div className="btn__holder rrf__jc-center">
-                <Button
-                  type="default"
-                  text="Login"
-                  onClick={() => {
-                    props.login();
-                  }}
-                />
+                <Button type="default" text="Login" onClick={handleLogin} />
               </div>
             </div>
           </div>
