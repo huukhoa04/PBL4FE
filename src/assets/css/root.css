@@ -327,3 +327,6 @@
 .rr__color-secondary{
     color: var(--secondary-color);
 }
+.cur__pointer{
+    cursor: pointer;
+}

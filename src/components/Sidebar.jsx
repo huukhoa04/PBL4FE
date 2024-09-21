@@ -11,8 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import smBackground from "../assets/img/background_sm-home.png";
 import Button from "./Button";
+import Toast from "./Toast";
 import ChannelComp from "./ChannelComp";
 import Background from "../assets/img/Background.jpg";
+
 import VideoContent from "./VideoContent";
 import StreamChat from "./StreamChat";
 import StreamUserInfo from "./StreamUserInfo";
@@ -317,7 +319,11 @@ export default function Sidebar(props) {
                     viewCount={144226}
                   />
                 </Suspense>
-                <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                <Button
+                  type={"link-type"}
+                  text={"Show more"}
+                  onClick={() => {}}
+                />
               </div>
               <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                 RECOMMENDED CHANNELS
@@ -381,7 +387,11 @@ export default function Sidebar(props) {
                     viewCount={144226}
                   />
                 </Suspense>
-                <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                <Button
+                  type={"link-type"}
+                  text={"Show more"}
+                  onClick={() => {}}
+                />
               </div>
             </div>
           </div>
@@ -444,7 +454,11 @@ export default function Sidebar(props) {
             </div>
             <div className="btn__holder">
               <div className="sepe__line"></div>
-              <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+              <Button
+                type={"link-type"}
+                text={"Show more"}
+                onClick={() => {}}
+              />
               <div className="sepe__line"></div>
             </div>
           </div>
@@ -500,7 +514,11 @@ export default function Sidebar(props) {
             </div>
             <div className="btn__holder">
               <div className="sepe__line"></div>
-              <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+              <Button
+                type={"link-type"}
+                text={"Show more"}
+                onClick={() => {}}
+              />
               <div className="sepe__line"></div>
             </div>
           </div>
@@ -569,7 +587,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -625,7 +647,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
               </div>
             </div>
@@ -771,7 +797,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -827,7 +857,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
               </div>
             </div>
@@ -971,7 +1005,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -1027,7 +1065,11 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
+                  <Button
+                    type={"link-type"}
+                    text={"Show more"}
+                    onClick={() => {}}
+                  />
                 </div>
               </div>
             </div>

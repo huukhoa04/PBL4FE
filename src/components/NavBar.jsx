@@ -6,13 +6,37 @@ import logo from "../assets/img/Logo__sieufix.png";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CustomModal from "./CustomModal";
+import Toast from "./Toast";
+
 export default function NavBar(props) {
   const route = props.routing;
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(0);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastPosition, setToastPosition] = useState("-100%");
+
+  useEffect(() => {
+    let timer;
+    if (showToast) {
+      setToastPosition("100%"); // Start from right
+      setTimeout(() => setToastPosition("0%"), 100); // Move to visible position quickly
+      timer = setTimeout(() => {
+        setToastPosition("-100%"); // Move to left
+        setTimeout(() => setShowToast(false), 300); // Wait for slide out animation
+      }, 3000);
+    }
+    return () => clearTimeout(timer);
+  }, [showToast]);
+
+  const handleShowToast = (message) => {
+    setToastMessage(message);
+    setShowToast(true);
+  };
+
   if (route == "AS") {
     return (
       <>
@@ -126,21 +150,42 @@ export default function NavBar(props) {
               }}
             />
           ) : (
-            <Button
-              type={"default"}
-              text={"Login"}
-              onClick={() => setIsModalOpen(true)}
-            />
+            <>
+              <Button
+                type={"default"}
+                text={"Login"}
+                onClick={() => setIsModalOpen(1)}
+              />
+            </>
           )}
         </div>
-        {isModalOpen && (
+        {isModalOpen == 1 /*login index*/ && (
           <CustomModal
             type="login"
             login={() => {
               setIsLoggedIn(true);
-              setIsModalOpen(false);
+              setIsModalOpen(0);
             }}
-            offModal={() => setIsModalOpen(false)}
+            offModal={() => setIsModalOpen(0)}
+            switchModal={() => setIsModalOpen(2)}
+          />
+        )}
+
+        {isModalOpen == 2 /*signup index*/ && (
+          <CustomModal
+            type="signup"
+            signup={() => {
+              setIsModalOpen(0);
+            }}
+            switchModal={() => setIsModalOpen(1)}
+            offModal={() => setIsModalOpen(0)}
+          />
+        )}
+        {showToast && (
+          <Toast
+            message={toastMessage}
+            duration={3000}
+            onDispose={() => setShowToast(false)}
           />
         )}
       </div>

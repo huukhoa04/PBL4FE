@@ -12,3 +12,11 @@
 .cate__content-holder{
     row-gap: 0.2em;
 }
+.category__card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.category__card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}

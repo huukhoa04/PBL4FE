@@ -50,7 +50,6 @@ export default function CustomModal(props) {
         props.login(username, password);
       }
     };
-
     return (
       <>
         <div className="modal__holder">
@@ -99,13 +98,16 @@ export default function CustomModal(props) {
                 </div>
                 <span className="fs__normal-1 league-spartan-light citizenship ta__center">
                   Don't have an account?{" "}
-                  <span className="fs__normal-1 league-spartan-semibold citizenship">
+                  <span
+                    className="fs__normal-1 league-spartan-semibold citizenship cur__pointer no__user-select"
+                    onClick={props.switchModal}
+                  >
                     Register
                   </span>
                 </span>
                 <span className="fs__normal-1 league-spartan-light citizenship ta__center">
                   Forgot your password?{" "}
-                  <span className="fs__normal-1 league-spartan-semibold citizenship">
+                  <span className="fs__normal-1 league-spartan-semibold citizenship cur__pointer no__user-select">
                     Reset
                   </span>
                 </span>
@@ -119,8 +121,132 @@ export default function CustomModal(props) {
         </div>
       </>
     );
-  } else if (props.type == "signup") {
-    return <></>;
+  } else if (props.type === "signup") {
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [agreeTerms, setAgreeTerms] = useState(false);
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState({});
+    const validateSignup = () => {
+      let newErrors = {};
+
+      if (!username.trim()) {
+        newErrors.username = "Username is required";
+      } else if (username.length < 3) {
+        newErrors.username = "Username must be at least 3 characters long";
+      }
+
+      if (!email.trim()) {
+        newErrors.email = "Email is required";
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        newErrors.email = "Email is invalid";
+      }
+
+      if (!password) {
+        newErrors.password = "Password is required";
+      } else if (password.length < 8) {
+        newErrors.password = "Password must be at least 8 characters long";
+      }
+
+      if (password !== confirmPassword) {
+        newErrors.confirmPassword = "Passwords do not match";
+      }
+
+      if (!agreeTerms) {
+        newErrors.agreeTerms = "You must agree to the terms and conditions";
+      }
+
+      setErrors(newErrors);
+      return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSignup = () => {
+      if (validateSignup()) {
+        // Proceed with signup
+        props.signup();
+      }
+    };
+    return (
+      <>
+        <div className="modal__holder">
+          <div className="login__modal modal__layout bg__color-2 rr__flex-col rrf__row-normal">
+            <div className="rr__flex-row rrf__jc-center rrf__ai-center rrf__col-normal">
+              <img src={logo} className="n__logo" />
+              <span className="fs__large-3 league-spartan-semibold citizenship ta__center">
+                Sign Up
+              </span>
+            </div>
+            <div className="rr__flex-col rrf__row-small">
+              <input
+                className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              {errors.username && (
+                <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                  {errors.username}
+                </span>
+              )}
+              <input
+                className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errors.email && (
+                <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                  {errors.email}
+                </span>
+              )}
+              <input
+                className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {errors.password && (
+                <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                  {errors.password}
+                </span>
+              )}
+              <input
+                className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+              {errors.confirmPassword && (
+                <span className="error rr__color-secondary fs__normal-1 league-spartan-regular">
+                  {errors.confirmPassword}
+                </span>
+              )}
+            </div>
+            <div className="rr__flex-col rrf__row-small">
+              <span className="fs__normal-1 league-spartan-light citizenship ta__center">
+                Already have an account?{" "}
+                <span
+                  className="fs__normal-1 league-spartan-semibold citizenship cur__pointer no__user-select"
+                  onClick={() => props.switchModal("signin")}
+                >
+                  Sign In
+                </span>
+              </span>
+            </div>
+            <div className="btn__holder rrf__jc-center">
+              <Button type="default" text="Sign Up" onClick={handleSignup} />
+            </div>
+          </div>
+
+          <div className="bg__shadow" onClick={props.offModal}></div>
+        </div>
+      </>
+    );
   } else if (props.type == "SM") {
     const [option, setOption] = useState(0);
     const [isClose, setIsClose] = useState(false);

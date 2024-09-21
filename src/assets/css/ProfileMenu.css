@@ -1,12 +1,18 @@
 /* @import url(./root.css); */
 
-.profile__menu{
+.profile__menu {
     height: 3.125em;
     width: auto;
     align-items: self-end;
     display: flex;
     flex-direction: column;
     margin-right: 1.25em;
+    transition: opacity 0.3s ease;
+}
+
+.profile__menu:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 .img__holder{
     width: 3em;
