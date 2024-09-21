@@ -16,7 +16,7 @@ import Background from "../assets/img/Background.jpg";
 import VideoContent from "./VideoContent";
 import StreamChat from "./StreamChat";
 import StreamUserInfo from "./StreamUserInfo";
-import { useState, useRef } from "react";
+import { useState, useRef, lazy, Suspense } from "react";
 import CategoryComp from "./CategoryComp";
 import CustomModal from "./CustomModal";
 import StatBox from "./StatBox";
@@ -238,6 +238,18 @@ export default function Sidebar(props) {
       </div>
     );
   } else if (props.routing == "index") {
+    const LazyChannelComp = lazy(
+      () =>
+        new Promise((resolve) =>
+          setTimeout(() => resolve(import("./ChannelComp")), 200)
+        )
+    );
+    const LazyVideoContent = lazy(
+      () =>
+        new Promise((resolve) =>
+          setTimeout(() => resolve(import("./VideoContent")), 200)
+        )
+    );
     return (
       <div className="main__position">
         <div className="sidebar bg__color-2 rr__flex-row">
@@ -248,112 +260,128 @@ export default function Sidebar(props) {
               </div>
               <div className="cn__holder-comps">
                 {/* map user here */}
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={true}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={144226}
-                />
-                <Button type={"link-type"} text={"Show more"} onClick={""} />
+                <Suspense
+                  fallback={
+                    <div className="fs__large-2 league-spartan-semibold citizenship fill__container ta__center">
+                      Loading...
+                    </div>
+                  }
+                >
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={true}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={144226}
+                  />
+                </Suspense>
+                <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
               </div>
               <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                 RECOMMENDED CHANNELS
               </div>
               <div className="cn__holder-comps">
                 {/* map user here */}
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={1326}
-                />
-                <ChannelComp
-                  isOffline={false}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={132326}
-                />
-                <ChannelComp
-                  isOffline={true}
-                  profilePic="https://i.imgur.com/neHVP5j.jpg"
-                  userName="Resolved"
-                  category="League Of Legends"
-                  viewCount={144226}
-                />
-                <Button type={"link-type"} text={"Show more"} onClick={""} />
+                <Suspense
+                  fallback={
+                    <div className="fs__large-2 league-spartan-semibold citizenship fill__container ta__center">
+                      Loading...
+                    </div>
+                  }
+                >
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                  <LazyChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={132326}
+                  />
+                  <LazyChannelComp
+                    isOffline={true}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={144226}
+                  />
+                </Suspense>
+                <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
               </div>
             </div>
           </div>
@@ -370,45 +398,53 @@ export default function Sidebar(props) {
             </div>
             <div className="sh__content-holder rr__flex-row">
               {/* map stream here */}
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
+              <Suspense
+                fallback={
+                  <div className="fs__large-2 league-spartan-semibold citizenship fill__container ta__center">
+                    Loading...
+                  </div>
+                }
+              >
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+              </Suspense>
             </div>
             <div className="btn__holder">
               <div className="sepe__line"></div>
-              <Button type={"link-type"} text={"Show more"} onClick={""} />
+              <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
               <div className="sepe__line"></div>
             </div>
           </div>
@@ -418,45 +454,53 @@ export default function Sidebar(props) {
             </div>
             <div className="sh__content-holder rr__flex-row">
               {/* map stream here */}
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
-              <VideoContent
-                title="MY FIRST STREAM"
-                thumbnail="https://i.imgur.com/mUaz2eC.jpg"
-                profilePic="https://i.imgur.com/JcLIDUe.jpg"
-                userName="nauts"
-                category="League Of Legends"
-              />
+              <Suspense
+                fallback={
+                  <div className="fs__large-2 league-spartan-semibold citizenship fill__container ta__center">
+                    Loading...
+                  </div>
+                }
+              >
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+                <LazyVideoContent
+                  title="MY FIRST STREAM"
+                  thumbnail="https://i.imgur.com/mUaz2eC.jpg"
+                  profilePic="https://i.imgur.com/JcLIDUe.jpg"
+                  userName="nauts"
+                  category="League Of Legends"
+                />
+              </Suspense>
             </div>
             <div className="btn__holder">
               <div className="sepe__line"></div>
-              <Button type={"link-type"} text={"Show more"} onClick={""} />
+              <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
               <div className="sepe__line"></div>
             </div>
           </div>
@@ -525,7 +569,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -581,7 +625,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
               </div>
             </div>
@@ -727,7 +771,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -783,7 +827,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
               </div>
             </div>
@@ -927,7 +971,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
                 <div className="cn__holder-label league-spartan-semibold fs__normal-2">
                   RECOMMENDED CHANNELS
@@ -983,7 +1027,7 @@ export default function Sidebar(props) {
                     category="League Of Legends"
                     viewCount={144226}
                   />
-                  <Button type={"link-type"} text={"Show more"} onClick={""} />
+                  <Button type={"link-type"} text={"Show more"} onClick={() => {}} />
                 </div>
               </div>
             </div>

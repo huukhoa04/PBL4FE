@@ -9,6 +9,12 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/IconOnlyBtn.css";
+import {
+  faFacebook,
+  faGoogle,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 export default function BtnIcon(props) {
   if (props.icons == faIcons) {
     return (
@@ -21,7 +27,20 @@ export default function BtnIcon(props) {
         </div>
       </>
     );
-  } else
+  } else if (
+    [faGoogle, faFacebook, faXTwitter, faInstagram].includes(props.icons)
+  ) {
+    return (
+      <>
+        <div
+          className="ic__icon-holder fs__large-2 citizenship"
+          onClick={props.onClick}
+        >
+          <FontAwesomeIcon icon={props.icons} />
+        </div>
+      </>
+    );
+  } else {
     return (
       <>
         <div className="rr__icon-btn citizenship" onClick={props.onClick}>
@@ -29,4 +48,5 @@ export default function BtnIcon(props) {
         </div>
       </>
     );
+  }
 }

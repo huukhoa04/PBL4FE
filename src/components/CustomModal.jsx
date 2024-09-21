@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Button from "./Button";
 import "../assets/css/CustomModal.css";
+import "../assets/css/NavBar.css";
 import BtnIcon from "./BtnIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import logo from "../assets/img/Logo__sieufix.png";
 import {
   faPenToSquare,
   faArrowDown,
@@ -12,10 +14,77 @@ import {
   faVideo,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faGoogle,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 export default function CustomModal(props) {
-  if (props.type == "login") return <></>;
-  else if (props.type == "signup") return <></>;
-  else if (props.type == "SM") {
+  if (props.type == "login") {
+    return (
+      <>
+        <div className="modal__holder">
+          <div className="login__modal modal__layout bg__color-2">
+            <div className="rr__flex-col rrf__jc-center fill__container rrf__row-normal">
+              <div className="rr__flex-row rrf__jc-center rrf__ai-center rrf__col-normal">
+                <img src={logo} className="n__logo" />
+                <span className="fs__large-3 league-spartan-semibold citizenship">
+                  Login
+                </span>
+              </div>
+              <div className="rr__flex-col rrf__row-normal fill__container">
+                <input
+                  className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                  type="text"
+                  placeholder="Username"
+                />
+                <input
+                  className="smd__input fs__normal-1 league-spartan-regular no__bg citizenship def-pad-2"
+                  type="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div className="rr__flex-col rrf__row-small">
+                <span className="fs__normal-1 league-spartan-light citizenship ta__center">
+                  Or you can use
+                </span>
+                <div className="rr__flex-row rrf__col-small rrf__jc-center">
+                  <BtnIcon icons={faFacebook} onClick={() => {}} />
+                  <BtnIcon icons={faGoogle} onClick={() => {}} />
+                  <BtnIcon icons={faXTwitter} onClick={() => {}} />
+                </div>
+                <span className="fs__normal-1 league-spartan-light citizenship ta__center">
+                  Don't have an account?{" "}
+                  <span className="fs__normal-1 league-spartan-semibold citizenship">
+                    Register
+                  </span>
+                </span>
+                <span className="fs__normal-1 league-spartan-light citizenship ta__center">
+                  Forgot your password?{" "}
+                  <span className="fs__normal-1 league-spartan-semibold citizenship">
+                    Reset
+                  </span>
+                </span>
+              </div>
+              <div className="btn__holder rrf__jc-center">
+                <Button
+                  type="default"
+                  text="Login"
+                  onClick={() => {
+                    props.login();
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="bg__shadow" onClick={props.offModal}></div>
+        </div>
+      </>
+    );
+  } else if (props.type == "signup") {
+    return <></>;
+  } else if (props.type == "SM") {
     const [option, setOption] = useState(0);
     const [isClose, setIsClose] = useState(false);
     return (
@@ -109,7 +178,7 @@ export default function CustomModal(props) {
   } else if (props.type == "account__setting profile-pic") {
     return (
       <>
-        <div className="modal__layout-2 rr__flex-row rrf__col-normal bg__color-2 citizenship def-pad-1">
+        <div className="modal__layout rr__flex-row rrf__col-normal bg__color-2 citizenship def-pad-1">
           <div className="smd__label-3">
             <img src="https://i.imgur.com/tbmr3e8.png" className="avatar__2x" />
           </div>
@@ -130,7 +199,7 @@ export default function CustomModal(props) {
     const [bio, setBio] = useState(props.bio);
     return (
       <>
-        <div className="modal__layout-2 rr__flex-col def-pad-2em bg__color-2">
+        <div className="modal__layout rr__flex-col def-pad-2em bg__color-2">
           <div className="modal__content-holder rr__flex-col rrf__row-normal def-pad-1 citizenship">
             <div className="rr__flex-row">
               <label className="smd__label-2 fs__normal-2 league-spartan-regular">

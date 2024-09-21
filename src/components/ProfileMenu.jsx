@@ -57,7 +57,7 @@ export default function ProfileMenu(props) {
             <MenuOptionBtn
               icon={faArrowRightFromBracket}
               optionName="Log out"
-              onClick={() => navigate("/")}
+              onClick={props.logout}
             />
           </div>
         </div>
