@@ -113,9 +113,20 @@
     border-radius: var(--radius-scale);
 
 }
-
+.video__holder{
+    width: 100%;
+    height: 50em;
+    margin-top: 1em;
+}
+.vd__main{
+    width: 77em;
+    height: auto;
+    background-color: #ffffff;
+}
 
 /* following page  */
+
+
 .fl__content-holder{
     padding: 2em;
     row-gap: 0.5em;

@@ -112,7 +112,13 @@ export default function NavBar(props) {
           <Button
             type={"default-2"}
             text={"Following"}
-            onClick={() => navigate("/following")}
+            onClick={() => {
+              if (isLoggedIn) {
+                navigate("/following");
+              } else {
+                handleShowToast("Please login to access this feature");
+              }
+            }}
           />
           <Button
             type={"default-2"}

@@ -56,7 +56,16 @@
     border-radius: var(--radius-scale);
     height: 10em;
 }
-
+.smd__input:focus{
+    outline: 2px solid var(--secondary-color);
+    border: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+.smd__textarea:focus{
+    outline: 2px solid var(--secondary-color);
+    border: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
 /* drop down  */
 .category-dropdown {
     position: absolute;

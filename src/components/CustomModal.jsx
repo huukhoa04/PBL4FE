@@ -343,12 +343,37 @@ export default function CustomModal(props) {
       <>
         <div className="modal__layout rr__flex-row rrf__col-normal bg__color-2 citizenship def-pad-1">
           <div className="smd__label-3">
-            <img src="https://i.imgur.com/tbmr3e8.png" className="avatar__2x" />
+            <img src="https://i.imgur.com/tbmr3e8.png" className="avatar__2x" id="avatarPreview" />
           </div>
           <div className="rr__flex-col fill__container rrf__row-small mx-auto">
             <div className="rr__flex-row rrf__col-normal">
-              <Button type="default" text="Update" />
-              <BtnIcon icons={faTrash} />
+              <input
+                type="file"
+                id="avatarInput"
+                accept="image/*"
+                style={{ display: 'none' }}
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                      document.getElementById('avatarPreview').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                }}
+              />
+              <Button 
+                type="default" 
+                text="Update" 
+                onClick={() => document.getElementById('avatarInput').click()}
+              />
+              <BtnIcon 
+                icons={faTrash} 
+                onClick={() => {
+                  document.getElementById('avatarPreview').src = "https://i.imgur.com/tbmr3e8.png";
+                }}
+              />
             </div>
             <span className="fs__normal-1 league-spartan-light citizenship">
               Must be a valid image file

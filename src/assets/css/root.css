@@ -132,6 +132,9 @@
 .fill__container{
     width: 100%;
 }
+.fill__y{
+    height: 100%;
+}
 .fit__content{
     width: fit-content;
 }
@@ -186,17 +189,47 @@
     display: flex;
     flex-direction: column-reverse;
 }
-.rrf__col-normal{
-    column-gap: 1em;
+.rrf__col-tiny {
+    column-gap: 0.25em;
 }
-.rrf__col-small{
+.rrf__col-small {
     column-gap: 0.5em;
 }
-.rrf__row-normal{
+.rrf__col-normal {
+    column-gap: 1em;
+}
+.rrf__col-large {
+    column-gap: 1.5em;
+}
+.rrf__col-xlarge {
+    column-gap: 2em;
+}
+.rrf__col-xxlarge {
+    column-gap: 3em;
+}
+.rrf__col-huge {
+    column-gap: 4em;
+}
+.rrf__row-tiny {
+    row-gap: 0.25em;
+}
+.rrf__row-small {
+    row-gap: 0.5em;
+}
+.rrf__row-normal {
     row-gap: 1em;
 }
-.rrf__row-small{
-    row-gap: 0.5em;
+.rrf__row-large {
+    row-gap: 1.5em;
+}
+.rrf__row-xlarge {
+    row-gap: 2em;
+}
+.rrf__row-xxlarge {
+    row-gap: 3em;
+}
+.rrf__row-huge {
+    row-gap: 4em;
 }
 .rrf__jc-center{
     justify-content: center;
@@ -215,9 +248,12 @@
 .mx-auto{
     align-self: center;
 }
-
+.no__flex-size{
+    flex: 0;
+}
 
 .rr__icon-btn{
+
     width: 2em;
     height: 2em;
     display: flex;
