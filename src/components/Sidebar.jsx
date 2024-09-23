@@ -664,6 +664,7 @@ export default function Sidebar(props) {
                 <span className="fl__title fs__title-5 league-spartan-regular citizenship fill__container">
                   Following
                 </span>
+
                 <div className="btn__holder">
                   {flBtn ? (
                     <>
@@ -693,6 +694,7 @@ export default function Sidebar(props) {
                     </>
                   )}
                 </div>
+                <div className="def-pad-3"></div>
                 <div className="sh__content-holder rr__flex-row">
                   {flBtn ? (
                     <>
@@ -1113,6 +1115,132 @@ export default function Sidebar(props) {
                     />
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  } else if (props.routing == "SearchResult") {
+    return (
+      <>
+        <div className="main__position">
+          <div className="sidebar bg__color-2 rr__flex-row">
+            <div className="border__r">
+              <div className="cn__holder rr__flex-col">
+                <div className="cn__holder-label league-spartan-semibold fs__normal-2">
+                  FOLLOWED CHANNELS
+                </div>
+                <div className="cn__holder-comps">
+                  {/* map user here */}
+                  <ChannelComp
+                    isOffline={false}
+                    profilePic="https://i.imgur.com/neHVP5j.jpg"
+                    userName="Resolved"
+                    category="League Of Legends"
+                    viewCount={1326}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="main__content bg__color-00">
+              {/* Main content will be inserted here */}
+              <div className="fl__content-holder rr__flex-col">
+                <span className="fl__title fs__title-1 league-spartan-semibold citizenship fill__container def-pad-2 no__padding-lr">
+                  Search results for "searchTerm"
+                </span>
+                <div className="def-pad-2"></div>
+                <span className="fs__large-2 league-spartan-regular citizenship fill__container def-pad-2 no__padding-lr">
+                  Channels tag with "searchTerm"
+                </span>
+                <div className="sh__content-holder rr__flex-col">
+                  {[
+                    {
+                      title: "Exploring New Horizons",
+                      thumbnail: "https://i.imgur.com/mUaz2eC.jpg",
+                      profilePic: "https://i.imgur.com/JcLIDUe.jpg",
+                      userName: "explorer123",
+                      category: "Just Chatting",
+                      view: 1500,
+                    },
+                    {
+                      title: "Late Night Coding Session",
+                      thumbnail: "https://i.imgur.com/nWxUwqZ.jpg",
+                      profilePic: "https://i.imgur.com/qN5DFQN.jpg",
+                      userName: "codemaster",
+                      category: "Science & Technology",
+                      view: 800,
+                    },
+                    {
+                      title: "Speedrunning Mario 64",
+                      thumbnail: "https://i.imgur.com/7ZjOD7a.jpg",
+                      profilePic: "https://i.imgur.com/8GC6owZ.jpg",
+                      userName: "speedster",
+                      category: "Retro",
+                      view: 2200,
+                    },
+                    {
+                      title: "Cooking Stream: Italian Cuisine",
+                      thumbnail: "https://i.imgur.com/3fPsZD1.jpg",
+                      profilePic: "https://i.imgur.com/LZ1Xosc.jpg",
+                      userName: "chefmaster",
+                      category: "Food & Drink",
+                      view: 1800,
+                    },
+                    {
+                      title: "Chill Music Stream",
+                      thumbnail: "https://i.imgur.com/2RqvQkS.jpg",
+                      profilePic: "https://i.imgur.com/T9qKjXV.jpg",
+                      userName: "musiclover",
+                      category: "Music",
+                      view: 3000,
+                    },
+                  ].map((content, index) => (
+                    <VideoContent
+                      key={index}
+                      type="search"
+                      title={content.title}
+                      thumbnail={content.thumbnail}
+                      profilePic={content.profilePic}
+                      userName={content.userName}
+                      category={content.category}
+                      view={content.view}
+                    />
+                  ))}
+                </div>
+                <span className="fs__large-2 league-spartan-regular citizenship fill__container def-pad-2 no__padding-lr">
+                  Live channels
+                </span>
+                <div className="sh__content-holder rr__flex-row">
+                  {[
+                    {
+                      title: "MY FIRST STREAM",
+                      thumbnail: "https://i.imgur.com/mUaz2eC.jpg",
+                      profilePic: "https://i.imgur.com/JcLIDUe.jpg",
+                      userName: "nauts",
+                      category: "League Of Legends",
+                    },
+                    {
+                      title: "MY FIRST STREAM",
+                      thumbnail: "https://i.imgur.com/mUaz2eC.jpg",
+                      profilePic: "https://i.imgur.com/JcLIDUe.jpg",
+                      userName: "nauts",
+                      category: "League Of Legends",
+                    },
+                  ].map((content, index) => (
+                    <VideoContent
+                      key={index}
+                      title={content.title}
+                      thumbnail={content.thumbnail}
+                      profilePic={content.profilePic}
+                      userName={content.userName}
+                      category={content.category}
+                    />
+                  ))}
+                </div>
+                <span className="fs__large-2 league-spartan-regular citizenship fill__container def-pad-2 no__padding-lr">
+                  Categories
+                </span>
               </div>
             </div>
           </div>

@@ -27,6 +27,13 @@ export default function ChannelComp(props) {
             </div>
         )
     }
+    else if(props.type == "search"){
+        return(
+            <>
+                
+            </>
+        )
+    }
     else {
         const status = props.isOffline;
         if(!status)

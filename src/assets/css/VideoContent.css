@@ -13,6 +13,15 @@
     background-size: cover;
     height: 10.6875em;
 }
+.thumbnail__small{
+    width: 13.56em;
+    height: 7.65em;
+    border-radius: var(--radius-scale);
+    background-size: cover;
+}
+.thumbnail__small:hover{
+    cursor: pointer;
+}
 .live__tag{
     background-color: red;
     width: fit-content;

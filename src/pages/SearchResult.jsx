@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar";
 import Sidebar from "../components/Sidebar";
 
-export default function AccountSetting() {
+export default function SearchResult() {
   return (
     <>
-      <NavBar routing="AS" />
-      <Sidebar routing="Personalize" />
+      <NavBar routing="index" />
+      <Sidebar routing="SearchResult" />
     </>
   );
 }
